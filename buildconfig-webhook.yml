@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: BuildConfig
+metadata: 
+  labels: 
+    app: openshiftproject
+    name: openshiftproject
+spec: 
+  output: 
+    to: 
+      kind: ImageStreamTag
+      name: "openshiftproject:latest"
+  source: 
+    git: 
+      type: Git
+      uri: "https://github.com/santoshganapa2/openshiftproject.git"
+  strategy: 
+    dockerStrategy: 
+      dockerfilePath: Dockerfile
+
